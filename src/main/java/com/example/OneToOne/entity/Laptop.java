@@ -1,9 +1,6 @@
 package com.example.OneToOne.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,4 +16,7 @@ public class Laptop {
     private String brand;
     private String model;
     private int ram;
+
+    @OneToOne(mappedBy = "laptop")
+    private Student student;
 }
